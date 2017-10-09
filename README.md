@@ -27,5 +27,5 @@ The following user stories must be completed:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='' width="350" height="750" />
+<img src='https://github.com/SiddhataPatil/Twitter_with_Fragments/blob/master/twitter.gif' width="350" height="750" />
 

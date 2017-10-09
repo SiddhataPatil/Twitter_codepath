@@ -2,7 +2,7 @@ package com.codepath.apps.siddhata.Activities;
 
 import com.codepath.apps.siddhata.R;
 import com.codepath.apps.siddhata.Application.TwitterApplication;
-import com.codepath.apps.siddhata.TwitterClient;
+import com.codepath.apps.siddhata.Network.TwitterClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import android.content.Intent;

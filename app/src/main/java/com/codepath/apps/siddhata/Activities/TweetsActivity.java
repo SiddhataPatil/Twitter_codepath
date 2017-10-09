@@ -15,7 +15,7 @@ import com.codepath.apps.siddhata.R;
 import com.codepath.apps.siddhata.Application.TwitterApplication;
 import com.codepath.apps.siddhata.fragments.HomeFragment;
 import com.codepath.apps.siddhata.fragments.MentionsFragment;
-import com.codepath.apps.siddhata.Network.User;
+import com.codepath.apps.siddhata.Model.User;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.json.JSONObject;

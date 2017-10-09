@@ -5,7 +5,7 @@ android {
     buildToolsVersion '25.0.0'
 
     defaultConfig {
-        applicationId "com.codepath.apps.simpletwitterclient"
+        applicationId "com.codepath.apps.siddhata"
         minSdkVersion 11
         targetSdkVersion 17
     }

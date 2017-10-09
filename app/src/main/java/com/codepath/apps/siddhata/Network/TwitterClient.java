@@ -1,4 +1,4 @@
-package com.codepath.apps.siddhata;
+package com.codepath.apps.siddhata.Network;
 
 import android.content.Context;
 
@@ -34,11 +34,12 @@ public class TwitterClient extends OAuthBaseClient {
     public static final String USER_TIMELINE = "statuses/user_timeline.json";
     public static final String VERIFY_CREDENTIAL = "account/verify_credentials.json";
     public static final String USER_PROFILE = "users/show.json";
-
+    public static final int TWEETS_COUNT_ONE_TIME = 25;
     
     public TwitterClient(Context context) {
         super(context, REST_API_CLASS, REST_URL, REST_CONSUMER_KEY, REST_CONSUMER_SECRET, REST_CALLBACK_URL);
     }
+
     
     public void getHomeTimeline(AsyncHttpResponseHandler handler, long offset, long itemPerPage) {
     	String url = getApiUrl(TIMELINE_STATUS);
@@ -59,7 +60,6 @@ public class TwitterClient extends OAuthBaseClient {
          params.put("screen_name", UserName);
          client.get(url, params, handler);
     }
-
     public void getHomeTimeline(AsyncHttpResponseHandler handler) {
         String url = getApiUrl(TIMELINE_STATUS);
         client.get(url, null, handler);
@@ -70,11 +70,25 @@ public class TwitterClient extends OAuthBaseClient {
     	client.get(url, null, handler);
     }
     
-    public void getUserTimeline(AsyncHttpResponseHandler handler) {
-    	String url = getApiUrl(USER_TIMELINE);
-    	client.get(url, null, handler);
+    public void getUserProfileTimeline(AsyncHttpResponseHandler handler) {
+        String url = getApiUrl(USER_TIMELINE);
+        client.get(url, null, handler);
     }
-    
+
+    public void getUserTimeline(String screenName, AsyncHttpResponseHandler handler) {
+        String apiUrl = getApiUrl("statuses/user_timeline.json");
+        RequestParams params = new RequestParams();
+        params.put("count", String.valueOf(TWEETS_COUNT_ONE_TIME));
+        params.put("screen_name", screenName);
+        getClient().get(apiUrl, params, handler);
+    }
+    public void updateStatus(String status, AsyncHttpResponseHandler handler) {
+        String apiUrl = getApiUrl("statuses/update.json");
+        RequestParams params = new RequestParams();
+        params.put("status", status);
+
+        getClient().post(apiUrl, params, handler);
+    }
     public void getMyInfo(AsyncHttpResponseHandler handler) {
         String apiUrl = getApiUrl(VERIFY_CREDENTIAL);
         client.get(apiUrl, null, handler);

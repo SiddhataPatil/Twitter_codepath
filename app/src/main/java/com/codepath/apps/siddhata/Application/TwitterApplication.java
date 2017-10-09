@@ -2,7 +2,7 @@ package com.codepath.apps.siddhata.Application;
 
 import android.content.Context;
 
-import com.codepath.apps.siddhata.TwitterClient;
+import com.codepath.apps.siddhata.Network.TwitterClient;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;

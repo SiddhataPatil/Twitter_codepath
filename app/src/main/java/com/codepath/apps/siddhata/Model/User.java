@@ -6,7 +6,6 @@ import org.json.JSONObject;
 /**
  * Created by siddhatapatil on 10/8/17.
  */
-
 public class User extends com.codepath.apps.siddhata.Model.BaseModel {
     public String getName() {
         return getString("name");

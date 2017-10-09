@@ -17,7 +17,6 @@ import static android.text.format.DateUtils.getRelativeDateTimeString;
 /**
  * Created by siddhatapatil on 10/8/17.
  */
-
 public class Tweet extends com.codepath.apps.siddhata.Model.BaseModel {
     private User user;
 

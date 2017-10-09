@@ -11,6 +11,7 @@ import org.json.JSONArray;
 
 
 public class HomeFragment extends TweetsFragment {
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

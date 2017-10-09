@@ -21,7 +21,6 @@ public class TweetsAdapter extends ArrayAdapter<Tweet> {
 	public TweetsAdapter(Context context, List<Tweet> tweets) {
 		super(context, 0, tweets);
 	}
-
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 	    View view = convertView;

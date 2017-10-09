@@ -92,6 +92,7 @@ public class TweetsFragment extends Fragment {
 
     }
 
+
     public void customLoadUserData(String User){
         Intent i = new Intent(getActivity(), ProfileActivity.class);
         i.putExtra("User", User);

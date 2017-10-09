@@ -61,7 +61,6 @@ public class ProfileActivity extends FragmentActivity {
 		}
 
 	}
-
 	private void populateProfileHeader(User u) {
 		TextView tvName = (TextView) findViewById(R.id.tvFullName);
 		TextView tvTagline = (TextView) findViewById(R.id.tvTagline);

@@ -12,8 +12,7 @@ import android.view.View;
 import android.widget.EditText;
 
 public class ComposeActivity extends FragmentActivity{
-	
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

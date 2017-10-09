@@ -5,7 +5,7 @@ import org.json.JSONArray;
 import android.os.Bundle;
 
 import com.codepath.apps.siddhata.Application.TwitterApplication;
-import com.codepath.apps.siddhata.Network.Tweet;
+import com.codepath.apps.siddhata.Model.Tweet;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 public class MentionsFragment extends TweetsFragment {

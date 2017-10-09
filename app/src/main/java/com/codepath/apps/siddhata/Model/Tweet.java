@@ -1,4 +1,4 @@
-package com.codepath.apps.siddhata.Network;
+package com.codepath.apps.siddhata.Model;
 
 import android.content.Context;
 import android.util.Log;
@@ -14,8 +14,11 @@ import static android.text.format.DateUtils.HOUR_IN_MILLIS;
 import static android.text.format.DateUtils.WEEK_IN_MILLIS;
 import static android.text.format.DateUtils.getRelativeDateTimeString;
 
+/**
+ * Created by siddhatapatil on 10/8/17.
+ */
 
-public class Tweet extends BaseModel {
+public class Tweet extends com.codepath.apps.siddhata.Model.BaseModel {
     private User user;
 
     public User getUser() {
@@ -48,8 +51,8 @@ public class Tweet extends BaseModel {
         }
     }
 
-    public static Tweet fromJson(JSONObject jsonObject) {
-        Tweet tweet = new Tweet();
+    public static com.codepath.apps.siddhata.Model.Tweet fromJson(JSONObject jsonObject) {
+        com.codepath.apps.siddhata.Model.Tweet tweet = new com.codepath.apps.siddhata.Model.Tweet();
         try {
             tweet.jsonObject = jsonObject;
             tweet.user = User.fromJson(jsonObject.getJSONObject("user"));
@@ -60,8 +63,8 @@ public class Tweet extends BaseModel {
         return tweet;
     }
 
-    public static ArrayList<Tweet> fromJson(JSONArray jsonArray) {
-        ArrayList<Tweet> tweets = new ArrayList<Tweet>(jsonArray.length());
+    public static ArrayList<com.codepath.apps.siddhata.Model.Tweet> fromJson(JSONArray jsonArray) {
+        ArrayList<com.codepath.apps.siddhata.Model.Tweet> tweets = new ArrayList<com.codepath.apps.siddhata.Model.Tweet>(jsonArray.length());
 
         for (int i=0; i < jsonArray.length(); i++) {
             JSONObject tweetJson = null;
@@ -72,7 +75,7 @@ public class Tweet extends BaseModel {
                 continue;
             }
 
-            Tweet tweet = Tweet.fromJson(tweetJson);
+            com.codepath.apps.siddhata.Model.Tweet tweet = com.codepath.apps.siddhata.Model.Tweet.fromJson(tweetJson);
             if (tweet != null) {
                 tweets.add(tweet);
             }

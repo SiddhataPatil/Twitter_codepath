@@ -1,7 +1,7 @@
 package com.codepath.apps.siddhata.fragments;
 
 import com.codepath.apps.siddhata.R;
-import com.codepath.apps.siddhata.TwitterClient;
+import com.codepath.apps.siddhata.Network.TwitterClient;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

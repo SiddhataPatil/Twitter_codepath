@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.codepath.apps.siddhata.Network.Tweet;
+import com.codepath.apps.siddhata.Model.Tweet;
 import com.codepath.apps.siddhata.R;
 import com.nostra13.universalimageloader.core.ImageLoader;
 

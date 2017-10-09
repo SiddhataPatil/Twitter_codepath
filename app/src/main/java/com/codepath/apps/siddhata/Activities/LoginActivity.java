@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.View;
 
 import com.codepath.apps.siddhata.R;
-import com.codepath.apps.siddhata.TwitterClient;
+import com.codepath.apps.siddhata.Network.TwitterClient;
 import com.codepath.oauth.OAuthLoginActivity;
 
 public class LoginActivity extends OAuthLoginActivity<TwitterClient> {

@@ -1,12 +1,12 @@
-package com.codepath.apps.siddhata.Network;
+package com.codepath.apps.siddhata.Model;
 
-import android.widget.AbsListView.OnScrollListener;
 import android.widget.AbsListView;
 
 /**
- * Created by wyatth on 14/12/8.
+ * Created by siddhatapatil on 10/8/17.
  */
-public abstract class EndlessScrollListener implements OnScrollListener {
+
+public abstract class EndlessScrollListener implements AbsListView.OnScrollListener {
     // The minimum amount of items to have below your current scroll position
     // before loading more.
     private int visibleThreshold = 5;

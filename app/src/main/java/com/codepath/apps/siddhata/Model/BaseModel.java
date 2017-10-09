@@ -1,4 +1,8 @@
-package com.codepath.apps.siddhata.Network;
+package com.codepath.apps.siddhata.Model;
+
+/**
+ * Created by siddhatapatil on 10/8/17.
+ */
 
 import org.json.JSONException;
 import org.json.JSONObject;

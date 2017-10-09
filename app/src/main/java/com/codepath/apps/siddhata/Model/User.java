@@ -1,8 +1,13 @@
-package com.codepath.apps.siddhata.Network;
+package com.codepath.apps.siddhata.Model;
+
 
 import org.json.JSONObject;
 
-public class User extends BaseModel {
+/**
+ * Created by siddhatapatil on 10/8/17.
+ */
+
+public class User extends com.codepath.apps.siddhata.Model.BaseModel {
     public String getName() {
         return getString("name");
     }
@@ -34,13 +39,13 @@ public class User extends BaseModel {
     public int getFriendsCount() {
         return getInt("friends_count");
     }
-    
+
     public String getTagline() {
-    	return getString("description");
+        return getString("description");
     }
 
-    public static User fromJson(JSONObject json) {
-        User u = new User();
+    public static com.codepath.apps.siddhata.Model.User fromJson(JSONObject json) {
+        com.codepath.apps.siddhata.Model.User u = new com.codepath.apps.siddhata.Model.User();
 
         try {
             u.jsonObject = json;
@@ -50,6 +55,6 @@ public class User extends BaseModel {
 
         return u;
     }
-
-
 }
+
+

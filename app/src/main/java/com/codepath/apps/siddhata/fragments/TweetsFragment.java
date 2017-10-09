@@ -3,6 +3,7 @@ package com.codepath.apps.siddhata.fragments;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -18,39 +19,41 @@ import com.codepath.apps.siddhata.Activities.ProfileActivity;
 import com.codepath.apps.siddhata.R;
 import com.codepath.apps.siddhata.Application.TwitterApplication;
 import com.codepath.apps.siddhata.Adapter.TweetsAdapter;
-import com.codepath.apps.siddhata.Network.EndlessScrollListener;
-import com.codepath.apps.siddhata.Network.Tweet;
+import com.codepath.apps.siddhata.Model.EndlessScrollListener;
+import com.codepath.apps.siddhata.Model.Tweet;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.json.JSONArray;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class TweetsFragment extends Fragment {
-	TweetsAdapter adapter;
-	FragmentActivity listener;
+
+    TweetsAdapter adapter;
+    FragmentActivity listener;
     long itemPerPage = 20;
     long maxId = 0;
-	
-	@Override
-	public View onCreateView(LayoutInflater inf, ViewGroup parent, Bundle savedInstanceState) {
-		return inf.inflate(R.layout.fragment_tweets_list, parent, false);
-	}
-	
-	@Override
-	public void onActivityCreated(Bundle savedInstanceState) {
-		super.onActivityCreated(savedInstanceState);
-		ArrayList<Tweet> tweets = new ArrayList<Tweet>();
+
+    @Override
+    public View onCreateView(LayoutInflater inf, ViewGroup parent, Bundle savedInstanceState) {
+        return inf.inflate(R.layout.fragment_tweets_list, parent, false);
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        ArrayList<Tweet> tweets = new ArrayList<Tweet>();
         adapter = new TweetsAdapter(getActivity(), tweets);
         ListView lv = (ListView) getActivity().findViewById(R.id.lvTweets);
 
         lv.setOnScrollListener(new EndlessScrollListener() {
-             @Override
-             public void onLoadMore(int page, int totalItemsCount) {
-                 customLoadMoreDataFromApi(maxId, itemPerPage);
-             }
-		});
+            @Override
+            public void onLoadMore(int page, int totalItemsCount) {
+                customLoadMoreDataFromApi(maxId, itemPerPage);
+            }
+        });
 
         lv.setOnItemClickListener(new OnItemClickListener() {
             @Override
@@ -63,28 +66,28 @@ public class TweetsFragment extends Fragment {
 
         });
 
-		lv.setAdapter(adapter);
-	}
+        lv.setAdapter(adapter);
+    }
 
 
-	
-	public void addAll(ArrayList<Tweet> tweets) {
+
+    public void addAll(ArrayList<Tweet> tweets) {
         this.maxId = tweets.get(tweets.size() - 1).getId();
-		adapter.addAll(tweets);
-	}
-	
-	@Override
-	public void onAttach(Activity activity) {
-		super.onAttach(activity);
-		this.listener = (FragmentActivity) activity;
-	}
+        adapter.addAll(tweets);
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        this.listener = (FragmentActivity) activity;
+    }
 
     public void customLoadMoreDataFromApi(long dummy, long itemPerPage){
         TwitterApplication.getRestClient().getHomeTimeline(new JsonHttpResponseHandler() {
-        	@Override
-       	    public void onSuccess(JSONArray jsonTweets) {
-       		    addAll(Tweet.fromJson(jsonTweets));
-        	}
+            @Override
+            public void onSuccess(JSONArray jsonTweets) {
+                addAll(Tweet.fromJson(jsonTweets));
+            }
         }, this.maxId, 20);
 
     }
@@ -95,4 +98,5 @@ public class TweetsFragment extends Fragment {
         Log.d("Debug", "*** " + User);
         startActivity(i);
     }
+
 }

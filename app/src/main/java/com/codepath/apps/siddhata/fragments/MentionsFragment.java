@@ -9,6 +9,7 @@ import com.codepath.apps.siddhata.Model.Tweet;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 public class MentionsFragment extends TweetsFragment {
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

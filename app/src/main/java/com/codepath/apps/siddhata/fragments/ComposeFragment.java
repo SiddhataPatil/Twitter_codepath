@@ -17,10 +17,5 @@ public class ComposeFragment extends Fragment {
 	public View onCreateView(LayoutInflater inf, ViewGroup parent, Bundle savedInstanceState) {
 		return inf.inflate(R.layout.post_twitter_fragment, parent, false);
 	}
-	
-	
-	
-
-		
 
 }

@@ -93,5 +93,4 @@ public class TweetsActivity extends FragmentActivity implements TabListener {
 	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 
 	}
-
 }

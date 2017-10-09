@@ -14,12 +14,12 @@ The following user stories must be completed:
 * [x] User can switch between Timeline and Mention views using tabs. (3 points)
 * [x] User can view their home timeline tweets.
 * [x] User can view the recent mentions of their username.
-* [ ] User can navigate to view their own profile (2 points)
-* [ ] User can see picture, tagline, # of followers, # of following, and tweets on their profile.
-* [ ] The users/verify_credentials endpoint can be used to access this information.
-* [ ] User can click on the profile image in any tweet to see another user's profile. (3 points)
-* [ ] User can see a picture, tagline, # of followers, # of following of the selected user.
-* [ ] Profile should include the selected user's timeline of tweets
+* [x] User can navigate to view their own profile (2 points)
+* [x] User can see picture, tagline, # of followers, # of following, and tweets on their profile.
+* [x] The users/verify_credentials endpoint can be used to access this information.
+* [x] User can click on the profile image in any tweet to see another user's profile. (3 points)
+* [x] User can see a picture, tagline, # of followers, # of following of the selected user.
+* [x] Profile should include the selected user's timeline of tweets
 * [x] User can infinitely paginate any of these timelines (home, mentions, user) by scrolling to the bottom (2 points)
 
 
